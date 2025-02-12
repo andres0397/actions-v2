@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: next-files
-          path: dist-next 
+          path: .next 
   deploy:
     needs: build
     runs-on: ubuntu-latest
