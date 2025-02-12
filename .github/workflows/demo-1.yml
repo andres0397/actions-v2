@@ -1,4 +1,4 @@
-name: demo worflow
+name: demo workflow
 on:
   pull_request:
     types:
@@ -13,11 +13,11 @@ jobs:
     steps:
       - name: Output the message event data
         run: echo "${{ toJSON(github.event) }}"
-      - name: Get the code  
+      - name: Get the code
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
-      - name: test code
+      - name: Test code
         run: npm run test
-      - name: build code
-        run: npm run build        
+      - name: Build code
+        run: npm run build
