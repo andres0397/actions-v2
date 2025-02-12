@@ -33,6 +33,11 @@ jobs:
         run: npm run test
       - name: Build code
         run: npm run build
+      - name: Upload artifacts
+      - uses: actions/upload-artifact@v4
+        with:
+          name: next-files
+          path: dist-next  
   deploy:
     needs: build
     runs-on: ubuntu-latest
