@@ -23,21 +23,17 @@ jobs:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - name: Output the message event data
-        run: echo "${{ toJSON(github.event) }}"
       - name: Get the code
         uses: actions/checkout@v4
       - name: Install dependencies
         run: npm ci
-      - name: Test code
-        run: npm run test
       - name: Build code
         run: npm run build
       - name: Upload artifacts
       - uses: actions/upload-artifact@v4
         with:
           name: next-files
-          path: dist-next  
+          path: dist-next 
   deploy:
     needs: build
     runs-on: ubuntu-latest
